@@ -8,7 +8,7 @@ safe: true
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 # Page title
-title : TEA Documentation
+title : Test Documentation
 author :
   name : Li ke(Coco)
   email : keli@tibco-support.com
@@ -16,9 +16,10 @@ author :
 # All TIBCO Document Template specific configurations are namespaced into this hash
 #
 TDT :
-  version : 2.1.0
+  version : 1.0.0
   footer_text: TIBCO Enterprise Administrator Documentation Copyright &copy; 2014 TIBCO Software Inc. All rights reserved. Proprietary and confidential. | v2.1.0
-  site_url: http://etna.na.tibco.com/
+  #site_url: http://etna.na.tibco.com/
+   site_url: http://amkulkar.github.io/
 
   # All links will be namespaced by BASE_PATH if defined.
   # Links in your website should always be prefixed with {{BASE_PATH}}
