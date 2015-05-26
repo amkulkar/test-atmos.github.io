@@ -1,0 +1,2491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <title>TEA Documentation</title>
+    
+    <meta name="author" content="Li ke(Coco)">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    
+    <link rel="icon" type="image/x-icon" href="/assets/themes/tea/images/favicon.ico"/>
+
+    <!-- Le styles -->
+    <link href="/assets/themes/tea/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/tea/vendor/prettify/css/prettify.css" rel="stylesheet">
+    <link href="/assets/themes/tea/css/tea.css" rel="stylesheet">
+    <link href="/assets/themes/tea/css/tea-docs.css" rel="stylesheet">
+    <script src="/assets/themes/tea/vendor/jquery/jquery-1.8.3.min.js"></script>
+    <script src="/assets/themes/tea/vendor/prettify/prettify.js"></script>
+    <script src="/assets/themes/tea/vendor/bootstrap/js/bootstrap.js"></script>
+
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/themes/tea/images/TIBCO_ea_docs_logo_white.png"/>
+      </a>
+      <ul class="nav">
+        
+
+
+      
+    
+
+
+  
+      
+          <li >
+              
+              
+
+
+    
+    
+
+
+
+              <a  target="" href="/getstarted/getting-started.html" >Get Started</a>
+          </li>
+      
+  
+      
+          <li >
+              
+              
+
+
+    
+    
+
+
+
+              <a  target="" href="/developerguide/developer-guide.html" >Developer Guide</a>
+          </li>
+      
+  
+      
+         
+
+          <li class="dropdown ">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Reference
+                  <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                  
+                      <li>
+                          
+                          
+
+
+    
+    
+
+
+
+                          <a class="" target="" href="/reference/javadocs.html">Javadocs</a>
+                      </li>
+                  
+                      <li>
+                          
+                          
+
+
+    
+    
+
+
+
+                          <a class=" active " target="" href="/reference/reference.html">UI Library</a>
+                      </li>
+                  
+                      <li>
+                          
+                          
+
+
+    
+    
+
+
+
+                          <a class="" target="" href="/reference/shell-user-guide.html">Shell User Guide</a>
+                      </li>
+                  
+              </ul>
+          </li>
+      
+  
+
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="container-narrow">
+        <div class="content">
+            
+<header class="jumbotron subhead">
+	<div class="container">
+		<h1>UI Library Reference</h1>
+		<p class="lead">Use the UI Library Reference documentation when you need more information about developing UI extension.</p>
+	</div>
+</header>
+<div><div class="reference container-fluid" style="padding-bottom: 30px;">
+<div class="row-fluid">
+<div class="span3 bs-docs-sidebar">
+    <ul class="nav nav-list bs-docs-sidenav">
+        <li class="nav-header">
+            Services
+        </li>
+        <li>
+            <a href="#teaLocation"> <i class="icon-chevron-right"></i> teaLocation </a>
+        </li>
+        <li>
+            <a href="#teaObjectService"> <i class="icon-chevron-right"></i> teaObjectService </a>
+        </li>
+        <li>
+            <a href="#teaScopeDecorator"> <i class="icon-chevron-right"></i> teaScopeDecorator </a>
+        </li>
+        <li>
+            <a href="#teaAuthService"> <i class="icon-chevron-right"></i> teaAuthService </a>
+        </li>
+        <li></li>
+        <!--li class="nav-header">
+            Filters
+        </li>
+        <li>
+            <a href="#customLabel"> <i class="icon-chevron-right"></i> customLabel </a>
+        </li>
+        <li>
+            <a href="#conditional"> <i class="icon-chevron-right"></i> conditional </a>
+        </li>
+        <li>
+            <a href="#uiOperation"> <i class="icon-chevron-right"></i> uiOperation </a>
+        </li>
+        <li>
+            <a href="#nameFilter"> <i class="icon-chevron-right"></i> nameFilter </a>
+        </li>
+        <li>
+            <a href="#bytesFilter"> <i class="icon-chevron-right"></i> bytesFilter </a>
+        </li-->
+        <li class="nav-header">
+            Directives
+        </li>
+        <li>
+            <a href="#teaPanel"> <i class="icon-chevron-right"></i> teaPanel </a>
+        </li>
+        <li>
+            <a href="#teaMasthead"> <i class="icon-chevron-right"></i> teaMasthead </a>
+        </li>
+        <li>
+            <a href="#teaAttribute"> <i class="icon-chevron-right"></i> teaAttribute </a>
+        </li>
+        <li>
+            <a href="#teaLongAttribute"> <i class="icon-chevron-right"></i> teaLongAttribute </a>
+        </li>
+        <li>
+            <a href="#teaConstraint"> <i class="icon-chevron-right"></i> teaConstraint </a>
+        </li>
+        <li class="nav-header">
+            Types
+        </li>
+        <li>
+            <a href="#teaobject"> <i class="icon-chevron-right"></i> TeaObject </a>
+        </li>
+        <li>
+            <a href="#teaobjecttype"> <i class="icon-chevron-right"></i> TeaObjectType </a>
+        </li>
+        <li>
+            <a href="#teaoperation"> <i class="icon-chevron-right"></i> TeaOperation </a>
+        </li>
+        <li>
+            <a href="#teaparam"> <i class="icon-chevron-right"></i> TeaParam </a>
+        </li>
+        <li>
+            <a href="#teareference"> <i class="icon-chevron-right"></i> TeaReference </a>
+        </li>
+        <li class="nav-header">
+            File formats
+        </li>
+        <li>
+            <a href="#customization"> <i class="icon-chevron-right"></i> UI customization file </a>
+        </li>
+    </ul>
+</div>
+<div class="span9">
+<section id="introduction">
+    <div class="row-fluid">
+        <p class="lead">
+            <strong>TIBCO Enterprise Administrator</strong> web UI is built with:
+        </p>
+
+        <div class="row-fluid">
+            <div class="span2">
+                <a href="http://angularjs.org/"><img src="images/AngularJS-large.png" width="120" /></a>
+            </div>
+            <div class="span2">
+                <a href="http://jquery.com/"><img src="images/jQuery_logo_color_onwhite.png" width="120" /></a>
+            </div>
+            <div class="span2">
+                <a href="http://twitter.github.com/bootstrap/"><img src="images/bootstrap.png" width="30" />
+                    Bootstrap</a>
+            </div>
+            <div class="span2" style="padding-top:6px">
+                <a href="http://developer.tibco.com/pagebus/default.jsp"> TIBCO PageBus&trade; </a>
+            </div>
+        </div>
+        <p class="lead" style="padding-top: 20px;">
+            Services, Filters and Directives are AngularJS concepts.
+            If you are completely or relatively unfamiliar with angular, you may want to check out one or both of the
+            following documents before:
+
+        <ul>
+            <li>
+                <a href="http://docs.angularjs.org/misc/started">Getting Started with AngularJS</a>
+            </li>
+            <li>
+                <a href="http://docs.angularjs.org/tutorial/index">AngularJS Tutorial</a>
+            </li>
+        </ul>
+        </p>
+        <p class="lead" style="padding-top: 20px;">
+            Javascript library versions in TEA 2.1.0:
+        <ul>
+            <li>
+                AngularJS 1.0.8, 1.2.14
+            </li>
+            <li>
+                jQuery v1.10.2
+            </li>
+            <li>
+                Bootstrap 3.2.0, 2.3.2
+            </li>
+            <li>
+                TIBCO PageBus v2.0.0
+            </li>
+        </ul>
+        </p>
+    </div>
+</section>
+<section id="services">
+<div class="row-fluid page-header">
+    <h1>Services</h1>
+</div>
+<div class="row-fluid">
+<section id="teaLocation">
+<h2>teaLocation
+    <small class="muted">(service in module
+        <code>
+            tea.services
+        </code>)
+    </small>
+</h2>
+<h3>Description</h3>
+
+<p>
+    The <code>teaLocation</code> service parses the URL in the browser address bar (based on AngularJS
+    <code>$location</code>)
+    and makes the URL available to your application.
+    Changes to the URL in the address bar are reflected into <code>teaLocation</code> service.
+    <code>teaLocation</code> must be use to navigate from one page/view to another.
+    <pre class="prettyprint lang-java"><b>Note:</b>It is highly recommended not to directly edit AngularJS <code>$location</code> in your app.</pre>
+
+</p>
+
+<p>
+    URLs in TEA have the following form:
+<pre class="prettyprint">http://localhost:8777/tea/view/{agentType}/{objectType}/{viewName}[?{query}]</pre>
+</p>
+<h3>Dependencies</h3>
+<ul>
+    <li>
+        $rootScope
+    </li>
+    <li>
+        $window
+    </li>
+    <li>
+        $location
+    </li>
+    <li>
+        teaObjectService
+    </li>
+    <li>
+        $log
+    </li>
+</ul>
+<h3>Methods</h3>
+
+<div class="row-fluid">
+    <ul class="methods span9">
+        <li>
+            <h4>goto</h4>
+
+            <p>
+                The goto function causes the browser to navigate to a TEA screen that is registered by the specified
+                agent
+                and which displays a particular view of a particular type of object.
+            </p>
+            <h5>Parameters</h5>
+            <ul>
+                <li>
+                    <code>
+                        params – {object} –
+                    </code>
+                    Parameters object containing the following properties ([propKey] indicates that a property is
+                    optional):
+                    <ul>
+                        <li>
+                            <code>agentType - {string} -</code>
+                            The agent name. Used to set agent token in the URL.
+                        </li>
+                        <li>
+                            <code>objectType - {string} -</code>
+                            The object type. Used to set objType token in the URL.
+                        </li>
+                        <li>
+                            <code>[viewName] - {string} -</code>
+                            The view name. Used to set objView token in the URL. If no view is specified, the view
+                            name will be '_'.
+                        </li>
+                        <li>
+                            <code>[query] - {object} -</code>
+                            Query object. Specifies name-value pairs that will be added as query parameters within
+                            the URL.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<h3>Properties</h3>
+
+<div class="row-fluid">
+    <ul class="properties span9">
+        <li>
+            <h4>info</h4>
+
+            <p>
+                This object allows the implementers of statelessly navigable TEA screens to bind to the information
+                that was provided in the URL, without having to hard-code the URL structure everywhere.
+            </p>
+
+            <p>
+                Parameters appearing in <code>teaLocation.info</code> will have been automatically URL-decoded. TEA
+                does not impose any limitations on the characters being used in object keys, query parameters, etc.
+                The query string may contain any valid UTF-8 character. As a result, screen developers should not
+                need to implement URL encoding or decoding for these parameters, as this is provided by <code>teaLocation</code>.
+            </p>
+            <h5>Returns</h5>
+            <ul>
+                <li>
+                    <code>
+                        {object} –
+                    </code>
+                    object with the following properties:
+                    <ul>
+                        <li>
+                            <code>agentType - {string} -</code>
+                            agentType token from the URL
+                        </li>
+                        <li>
+                            <code>objectType - {string} -</code>
+                            objectType token from the URL
+                        </li>
+                        <li>
+                            <code>viewName - {string} -</code>
+                            viewName token from the URL
+                        </li>
+                        <li>
+                            <code>query - {object} -</code>
+                            query token from the URL, as name-value pairs
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<h3>Events</h3>
+
+<div class="row-fluid">
+    <ul class="events span9">
+        <li>
+            <h4>teaLocationChangedSuccess</h4>
+
+            <p>
+                Broadcasted when the change of URL has been processed by <code>teaLocation</code>.
+            </p>
+            <h5>Type</h5>
+
+            <p>
+                broadcast
+            </p>
+            <h5>Target</h5>
+
+            <p>
+                root scope
+            </p>
+            <h5>Parameters</h5>
+            <ul>
+                <li>
+                    <code>event - {object} -</code>
+                    Synthetic event object.
+                </li>
+                <li>
+                    <code>newInfo - {object} -</code>
+                    info property that represents information about the new URL. See <code>teaLocation.info</code>
+                    for more information about the attributes of this object.
+                </li>
+                <li>
+                    <code>oldInfo - {object} -</code>
+                    info property that represents information about the old URL. See <code>teaLocation.info</code>
+                    for more information about the attributes of this object.
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<h3>Usage</h3>
+
+<p>
+    The <code>goto</code> method facilitates linking from one screen to another. It allows the implementers of TEA
+    screens to support pivoting to related objects, without having to hard-code the URL structure everywhere and
+    without needing to know details of how TEA accomplishes the link.
+</p>
+
+<p>
+    <code>teaLocation.goto()</code> will automatically URL-encode the query string parameters. TEA does not impose
+    any limitations on the characters being used in object keys, query parameters, etc. The query string may contain
+    any valid UTF-8 character. As a result, screen developers should not need to implement URL encoding or decoding
+    for these parameters, as this is provided by <code>teaLocation</code>.
+</p>
+
+<h3>Example</h3>
+
+<p>
+    One of the BusinessWorks screens within TEA displays details about an AppNode. This screen contains a table of
+    Apps that are associated with the AppNode. Each row in the table shows a very brief summary view of one App. The
+    first column in the table shows the App's unique ID from the BW object model. This value is rendered as a link.
+    If the user clicks on the link, TEA navigates to the TEA screen that displays details about a single App.
+</p>
+
+<p>
+    One of the BusinessWorks screens within TEA displays details about a Process. This screen contains a table of
+    SAP Adapter Endpoints that are associated with the Process. Each row in the table shows a very brief summary
+    view of one SAP Adapter Endpoint, with information retrieved from BW's own process model. The first column in
+    the table shows the SAP Adapter Endpoint's ID. This value is rendered as a link. If the user clicks on the link,
+    TEA navigates to the TEA screen that displays details about a single SAP Adapter Endpoint. Note that this screen
+    is not contributed to TEA by the BW agent, but rather by the SAP Adapter agent. The information about this agent
+    - agent name, agent version, available object types, available views, etc - is published as a spec by the
+    Adapters team and used by the BW team when developing the BW UI.
+</p>
+</section>
+<section id="teaObjectService">
+<h2>teaObjectService
+    <small class="muted">(service in module
+        <code>
+            tea.services
+        </code>)
+    </small>
+</h2>
+<h3>Description</h3>
+
+<p>
+    The
+    <code>
+        objectService
+    </code>
+    is a factory which creates TEA objects providing data from TEA Server and agents.
+</p>
+
+<h3>Dependencies</h3>
+<ul>
+    <li>
+        $q
+    </li>
+    <li>
+        $http
+    </li>
+    <li>
+        $rootScope
+    </li>
+</ul>
+<h3>Methods</h3>
+
+<div class="row-fluid">
+<ul class="methods span9">
+<li>
+    <h4>load</h4>
+
+    <p>
+        The <code>load</code> function causes the browser to emit an AJAX call to the server to retrieve a TEA object.
+    </p>
+    <h5>Parameters</h5>
+    <ul>
+        <li>
+            <code>
+                paramsObject – {object} –
+            </code>
+            Parameters object containing the following properties ([propKey] indicates that a property is optional):
+            <ul>
+                <li>
+                    <code>
+                        agentType – {string} –
+                    </code>
+                    The agent type name. Used to set agent type token in the Object ID.
+                </li>
+                <li>
+                    <code>
+                        objectType – {string} –
+                    </code>
+                    The object type. Used to set objType token in the Object ID.
+                </li>
+                <li>
+                    <code>
+                        [agentID] – {string} –
+                    </code>
+                    The agent ID. Used to set agentID in the Object ID. Not be needed if there is only one agent of a
+                    given agentType.
+                </li>
+                <li>
+                    <code>
+                        [objectKey] – {string} –
+                    </code>
+                    The object key. Used to set objectKey in the Object ID. Not be needed if the object is a singleton.
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <h5>Returns</h5>
+
+    <p>
+        <code>
+            {Promise} –
+        </code>
+        Returns a promise that will be resolved with the object requested as
+        <code>
+            TeaObject
+        </code>
+    </p>
+</li>
+<li>
+    <h4>loadPath</h4>
+
+    <p>
+        The <code>loadPath</code> function causes the browser to emit an AJAX call to the server to retrieve a TEA
+        object.
+    </p>
+    <h5>Parameters</h5>
+    <ul>
+        <li>
+            <code>
+                path – {string} –
+            </code>
+            path of the object following members relation from the root object.
+
+        </li>
+    </ul>
+    <h5>Returns</h5>
+
+    <p>
+        <code>
+            {Promise} –
+        </code>
+        Returns a promise that will be resolved with the object requested as
+        <code>
+            TeaObject
+        </code>
+    </p>
+</li>
+<li>
+    <h4>loadType</h4>
+
+    <p>
+        The <code>loadType</code> function causes the browser to emit an AJAX call to the server to retrieve a TEA
+        object type.
+    </p>
+    <h5>Parameters</h5>
+    <ul>
+        <li>
+            <code>
+                typeName – {string} –
+            </code>
+            typeName string following the format agentType:agentVersion:objectType.
+
+        </li>
+    </ul>
+    <h5>Returns</h5>
+
+    <p>
+        <code>
+            {Promise} –
+        </code>
+        Returns a promise that will be resolved with the object requested as
+        <code>
+            TeaObjectType
+        </code>
+    </p>
+</li>
+<li>
+    <h4>invoke</h4>
+
+    <p>
+        The <code>invoke</code> method invokes an operation on an object. An AJAX call is made to the server that uses
+        object meta-data to invoke the object operation on the agent managing this object.
+    </p>
+    <h5>Parameters</h5>
+    <ul>
+        <li>
+            <code>
+                paramsObject – {object} –
+            </code>
+            Parameters object containing the following properties ([propKey] indicates that a property is optional):
+        </li>
+        <ul>
+            <li>
+                <code>
+                    agentType – {string} –
+                </code>
+                The agent type name. Used to set agent type token in the Object ID.
+            </li>
+            <li>
+                <code>
+                    objectType – {string} –
+                </code>
+                The object type. Used to set objType token in the Object ID.
+            </li>
+            <li>
+                <code>
+                    [agentID] – {string} –
+                </code>
+                The agent ID. Used to set agentID in the Object ID. Not be needed if there is only one agent of a given
+                agentType.
+            </li>
+            <li>
+                <code>
+                    [objectKey] – {string} –
+                </code>
+                The object key. Used to set objectKey in the Object ID. Not be needed if the object is a singleton.
+            </li>
+            <li>
+                <code>
+                    operation – {string} –
+                </code>
+                String parameter defining the operation name to invoke
+            </li>
+            <li>
+                <code>
+                    methodType – {string} –
+                </code>
+                String parameter defining the method type i.e. READ, UPDATE or DELETE
+            </li>
+            <li>
+                <code>
+                    params – {object} –
+                </code>
+                Object parameter defining arguments of the operation invocation.
+            </li>
+        </ul>
+        <li>
+            <code>
+                requireHeaders – {boolean} –
+            </code>
+            If this parameter is true, then the returned Promise will be resolved with object containing response and http headers.
+        </li>
+    </ul>
+    <h5>Returns</h5>
+
+    <p>
+        <code>
+            {Promise} –
+        </code>
+        Returns a promise that will be resolved with the response object of the operation.
+    </p>
+</li>
+<li>
+    <h4>query</h4>
+
+    <p>
+        The <code>query</code> method queries the agent and retrieves an array of TeaObject instances. An AJAX call is
+        made to the server that uses object meta-data to retrieve the object data from the agent managing the specified
+        type of object.
+    </p>
+
+    <p>
+        The intended use case for this <code>query</code> is to support lists.
+    </p>
+
+    <p>
+        <code>query</code> operation will invoke the agent READ operation named query on the given object. That
+        operation can be defined using standard mechanism to define object operations inside TEA agents.
+    </p>
+    <h5>Parameters</h5>
+    <ul>
+        <code>
+            paramsObject – {object} –
+        </code>
+        Parameters object containing the following properties ([propKey] indicates that a property is optional):
+        <ul>
+            <li>
+                <code>
+                    agentType – {string} –
+                </code>
+                The agent type name. Used to set agent type token in the Object ID.
+            </li>
+            <li>
+                <code>
+                    objectType – {string} –
+                </code>
+                The object type. Used to set objType token in the Object ID.
+            </li>
+            <li>
+                <code>
+                    [agentID] – {string} –
+                </code>
+                The agent ID. Used to set agentID in the Object ID. Not be needed if there is only one agent of a given
+                agentType.
+            </li>
+            <li>
+                <code>
+                    [objectKey] – {string} –
+                </code>
+                The object key. Used to set objectKey in the Object ID. Not be needed if the object is a singleton.
+            </li>
+            <li>
+                <code>
+                    params – {object} –
+                </code>
+                Object parameter defining arguments of the operation invocation.
+            </li>
+        </ul>
+    </ul>
+    <h5>Returns</h5>
+
+    <p>
+        <code>
+            {Promise} –
+        </code>
+        Returns a promise that will be resolved with the objects requested as
+        <code>
+            Array&lt;Teaobject&gt;
+        </code>
+    </p>
+</li>
+<li>
+    <h4>reference</h4>
+
+    <p>
+        The <code>reference</code> operation queries the agent and retrieves an array of TeaAgent instances. An AJAX
+        call is made to the server that uses object meta-data to retrieve the object data from the agent managing the
+        specified type of object.
+    </p>
+
+    <p>
+        The intended use case for this reference is to support relationship lists. <code>query</code> needs parameters
+        while <code>reference</code> is named. A <code>reference</code> is navigable i.e. TEA server can retrieve the
+        list of objects based only on meta-data. This allows the reference results to be indexed.
+    </p>
+    <h5>Parameters</h5>
+    <ul>
+        <code>
+            paramsObject – {object} –
+        </code>
+        Parameters object containing the following properties ([propKey] indicates that a property is optional):
+        <ul>
+            <li>
+                <code>
+                    agentType – {string} –
+                </code>
+                The agent type name. Used to set agent type token in the Object ID.
+            </li>
+            <li>
+                <code>
+                    objectType – {string} –
+                </code>
+                The object type. Used to set objType token in the Object ID.
+            </li>
+            <li>
+                <code>
+                    [agentID] – {string} –
+                </code>
+                The agent ID. Used to set agentID in the Object ID. Not be needed if there is only one agent of a given
+                agentType.
+            </li>
+            <li>
+                <code>
+                    [objectKey] – {string} –
+                </code>
+                The object key. Used to set objectKey in the Object ID. Not be needed if the object is a singleton.
+            </li>
+            <li>
+                <code>
+                    reference – {string} –
+                </code>
+                String parameter defining the name of the reference to retrieve
+            </li>
+        </ul>
+    </ul>
+    <h5>Returns</h5>
+
+    <p>
+        <code>
+            {Promise} –
+        </code>
+        Returns a promise that will be resolved with the objects requested as
+        <code>
+            Array&lt;Teaobject&gt;
+        </code>
+    </p>
+</li>
+<li>
+    <h4>isProductRegistered</h4>
+
+    <p>
+        The <code>isProductRegistered</code> function causes the browser to emit an AJAX call to the server to check if product is registered or not.
+    </p>
+    <h5>Parameters</h5>
+    <ul>
+        <code>
+            paramsObject – {object} –
+        </code>
+        Parameters object containing the following properties:
+        <ul>
+            <li>
+                <code>
+                    agentTypeName – {string} –
+                </code>
+                The agentTypeName of the product
+            </li>
+            <li>
+                <code>
+                    agentTypeVersion – {string} –
+                </code>
+                The agentTypeVersion of the product
+            </li>
+        </ul>
+    </ul>
+    <h5>Returns</h5>
+
+    <p>
+        <code>
+            {Promise} –
+        </code>
+        Returns a promise that will be resolved with boolean indicating whether product is registered or not.
+    </p>
+</li>
+</ul>
+</div>
+<h3>Usage</h3>
+
+<p>
+    Typical usage of the objectService is to retrieve objects needed to render the view.
+</p>
+</section>
+<section id="teaScopeDecorator">
+    <h2>teaScopeDecorator
+        <small class="muted">(service in module
+            <code>
+                tea.services
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        The
+        <code>
+            teaScopeDecorator
+        </code>
+        service decorates the scope with a <code>TeaObject</code> based on the current URL.
+        It also attaches several utility methods that are useful in the
+        <code>
+            teaMasthead
+        </code>
+        directive and elsewhere.
+    </p>
+
+    <h3>Dependencies</h3>
+    <ul>
+        <li>
+            teaLocation
+        </li>
+        <li>
+            teaObjectService
+        </li>
+        <li>
+            $q
+        </li>
+        <li>
+            $http
+        </li>
+        <li>
+            $modal
+        </li>
+    </ul>
+    <h3>Methods</h3>
+
+    <div class="row-fluid">
+        <ul class="properties span9">
+            <li>
+                <h4>goto</h4>
+
+                <p>
+                    The <code>goto</code> function offers a simplified way to call <code>teaLocation.goto</code>.
+                </p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>
+                        <code>
+                            object {TeaObject} –
+                        </code>
+                        The object to navigate to.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>reload</h4>
+
+                <p>
+                    The <code>reload</code> function causes the scope's TeaObject to be reloaded
+                    from scratch. This can be important in an "onSuccess" function as passed
+                    to <code>openOperation</code>.
+                </p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>
+                        <code>
+                            object {TeaObject} –
+                        </code>
+                        The object to navigate to.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>goToProduct</h4>
+
+                <p>
+                    The <code>goToProduct</code> function navigates to the current product's top-level object.
+                </p>
+            </li>
+            <li>
+                <h4>getStatusClass</h4>
+
+                <p>
+                    The <code>getStatusClass</code> function should be used to set the class for styling
+                    <code>object.status</code>. If the state is "running" or "started" (case insensitive),
+                    the function returns <code>tea-status-ok</code>, otherwise it returns <code>tea-status-error</code>.
+                </p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>
+                        <code>
+                            object {TeaObject} –
+                        </code>
+                        The object whose status is to be displayed
+                    </li>
+                </ul>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {String} –
+                        </code>
+                        <code>tea-status-ok</code> or <code>tea-status-error</code>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>openOperation</h4>
+
+                <p>
+                    The <code>openOperation</code> function opens a modal dialog with a form
+                    for invoking an operation on the current object.
+                </p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>
+                        <code>
+                            operationName {String} –
+                        </code>
+                        Name of the operation
+                    </li>
+                    <li>
+                        <code>
+                            defaultValues {String[]} –
+                        </code>
+                        (optional) default values for the operation parameters
+                    </li>
+                    <li>
+                        <code>
+                            onSuccess {Function} –
+                        </code>
+                        A function to call upon successful completion of the operation call.
+                        By default, <code>scope.reload</code> is called.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>openOperationWithResponseHeaders</h4>
+
+                <p>
+                    The <code>openOperationWithResponseHeaders</code> function opens a modal dialog with a form
+                    for invoking an operation on the current object.
+                </p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>
+                        <code>
+                            operationName {String} –
+                        </code>
+                        Name of the operation
+                    </li>
+                    <li>
+                        <code>
+                            defaultValues {String[]} –
+                        </code>
+                        (optional) default values for the operation parameters
+                    </li>
+                    <li>
+                        <code>
+                            onSuccess {Function} –
+                        </code>
+                        A function to call upon successful completion of the operation call.
+                        Result passed to this function will contain both response and http headers.
+                        By default, <code>scope.reload</code> is called.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>getReference</h4>
+
+                <p>
+                    The <code>getReference</code> function offers a simplified way to call
+                    <code>teaObjectService.getReference</code>.
+                </p>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>
+                        <code>
+                            object {TeaObject} –
+                        </code>
+                        The object containing the reference
+                    </li>
+                    <li>
+                        <code>
+                            refName {String} –
+                        </code>
+                        The name of the reference
+                    </li>
+                    <li>
+                        <code>
+                            onReferenceDo {Function} –
+                        </code>
+                        The function that will be executed as a promise, passed the <code>Array&lt;TeaObject&gt;</code>
+                        returned by <code>teaObjectService.getReference</code>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h3>Usage</h3>
+
+    <p>
+                                    <pre class="prettyprint lang-javascript">myModule.controller('MyController', function ($scope, teaScopeDecorator) {
+    teaScopeDecorator($scope);
+
+    // TeaObject now available under $scope.object
+
+    // functions $scope.openOperation, $scope.goto, $scope.goToProduct,
+    //     $scope.getReference, and $scope.getStatusClass available
+});</pre>
+    </p>
+</section>
+
+<div class="row-fluid">
+    <section id="teaAuthService">
+        <h2>teaAuthService
+            <small class="muted">(service in module
+                <code>
+                    tea.services
+                </code>)
+            </small>
+        </h2>
+        <h3>Description</h3>
+
+        <p>
+            The <code>teaAuthService</code> service provides authorization related services. As of now, the only
+            public API is listPrivileges method.
+        </p>
+
+        <h3>Dependencies</h3>
+        <ul>
+            <li>
+                $q
+            </li>
+            <li>
+                $http
+            </li>
+
+        </ul>
+        <h3>Methods</h3>
+
+        <div class="row-fluid">
+            <ul class="methods span9">
+                <li>
+                    <h4>listPrivileges</h4>
+
+                    <p>
+                        The listPrivileges function returns the list of privileges of the current
+                        logged in user.
+                    </p>
+                    <h5>Parameters</h5>
+                    <ul>
+                        <li>
+                            <code>
+                                None
+                            </code>
+
+                        </li>
+                    </ul>
+
+                    <h5>Returns</h5>
+
+                    <p>
+                        <code>
+                            {Promise} –
+                        </code>
+                        Returns a promise that will be resolved with the response object of the listPrivileges
+                        operation. The
+                        response object is a list and each entry in the list has these properties.
+                    <ul>
+                        <li>
+                            <code>
+                                product – {string} –
+                            </code>
+                            Name of the product that defined this permission.
+                        </li>
+
+                        <li>
+                            <code>
+                                objectType – {string} –
+                            </code>
+                            The object type.
+                        </li>
+
+                        <li>
+                            <code>
+                                permissions – {Object} –
+                            </code>
+                            Map object with name of the permission as key and value object with the following
+                            properties.
+                            <ul>
+                                <li>
+                                    <code>
+                                        productName – {string} –
+                                    </code>
+                                    Name of the product that defined this permission.
+                                </li>
+                                <li>
+                                    <code>
+                                        name – {string} –
+                                    </code>
+                                    Name of the permission.
+                                </li>
+                                <li>
+                                    <code>
+                                        desc – {string} –
+                                    </code>
+                                    Description of the permission.
+                                </li>
+                            </ul>
+
+
+                        </li>
+                    </ul>
+                    </p>
+
+                </li>
+            </ul>
+        </div>
+        <h3>Usage</h3>
+
+        <p>
+                                    <pre class="prettyprint lang-javascript">myModule.controller('MyController', function ($scope, teaAuthService) {
+     teaAuthService.listPrivileges().then(function(data) {
+       // this callback will be called asynchronously
+       // when the response is available.
+      
+      }, function(error) {
+      // called asynchronously if any error occurs.
+      });
+});</pre>
+        </p>
+
+
+</section>
+<!--section id="filters">
+<div class="row-fluid page-header">
+    <h1>Filters</h1>
+</div>
+<div class="row-fluid">
+<section id="customLabel">
+    <h2>customLabel
+        <small class="muted">(filter in module
+            <code>
+                tea.filters
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        Returns the name of the object or the custom label if defined. The filter can be applied to a
+        <code>
+            TeaObject
+        </code>
+        or a
+        <code>
+            TeaOperation
+        </code>
+        .
+    </p>
+
+    <h3>Usage</h3>
+    <code class="nostyle">
+        
+    </code>
+    <h4>Parameters</h4>
+    <ul>
+        <li>
+            <code class="nostyle">
+                object – {TeaObject | TeaOperation}
+            </code>
+
+            <p>
+                A
+                <code>
+                    TeaObject
+                </code>
+                or a
+                <code>
+                    TeaOperation
+                </code>
+                .
+            </p>
+        </li>
+    </ul>
+</section>
+<section id="conditional">
+    <h2>conditional
+        <small class="muted">(filter in module
+            <code>
+                tea.filters
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        Returns one of two value depending on the value of a
+        <code>
+            boolean
+        </code>
+        expression.
+    </p>
+
+    <h3>Usage</h3>
+    <code class="nostyle">
+        
+    </code>
+    <h4>Parameters</h4>
+    <ul>
+        <li>
+            <code class="nostyle">
+                expression – {string}
+            </code>
+
+            <p>
+                An Angular expression which evaluates to a boolean
+            </p>
+        </li>
+        <li>
+            <code class="nostyle">
+                trueValue – {string | object}
+            </code>
+
+            <p>
+                Value returned by the filter if the given
+                <code>
+                    expression
+                </code>
+                evaluates to
+                <code>
+                    true
+                </code>
+            </p>
+        </li>
+        <li>
+            <code class="nostyle">
+                falseValue – {string | object}
+            </code>
+
+            <p>
+                Value returned by the filter if the given
+                <code>
+                    expression
+                </code>
+                evaluates to
+                <code>
+                    false
+                </code>
+            </p>
+        </li>
+    </ul>
+</section>
+<section id="uiOperation">
+    <h2>uiOperation
+        <small class="muted">(filter in module
+            <code>
+                tea.filters
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        Returns a new
+        <code>
+            TeaOperation
+        </code>
+        array that should be displayed in the UI, from an array.
+    </p>
+
+    <h3>Usage</h3>
+    <code class="nostyle">
+        
+    </code>
+    <h4>Parameters</h4>
+    <ul>
+        <li>
+            <code class="nostyle">
+                operations – {Array.&lt;TeaOperation&gt;}
+            </code>
+
+            <p>
+                An
+                <code>
+                    array
+                </code>
+                of
+                <code>
+                    TeaOperation
+                </code>
+            </p>
+        </li>
+    </ul>
+</section>
+<section id="nameFilter">
+    <h2>nameFilter
+        <small class="muted">(filter in module
+            <code>
+                tea.filters
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        Returns a new array strings that contain a substring, from an array of strings.
+        For example, if the array has the values
+        <code>
+            'abc', 'bcd', 'def'
+        </code>
+        and the search string is
+        <code>
+            'bc'
+        </code>
+        , the returned array will have values
+        <code>
+            'abc','bcd'
+        </code>
+        .
+    </p>
+
+    <h3>Usage</h3>
+    <code class="nostyle">
+        
+    </code>
+    <h4>Parameters</h4>
+    <ul>
+        <li>
+            <code class="nostyle">
+                strings – {Array.&lt;string&gt;}
+            </code>
+
+            <p>
+                An
+                <code>
+                    array
+                </code>
+                of
+                <code>
+                    string
+                </code>
+                .
+            </p>
+        </li>
+        <li>
+            <code class="nostyle">
+                search – {string}
+            </code>
+
+            <p>
+                A
+                <code>
+                    string
+                </code>
+                to search as a substring of the strings in the array.
+            </p>
+        </li>
+    </ul>
+</section>
+<section id="bytesFilter">
+    <h2>bytesFilter
+        <small class="muted">(filter in module
+            <code>
+                tea.filters
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        Returns a string that indicate a byte size.
+        For example with the value <code>1456790</code> and the precision <code>3</code> the filter will return <code>1.389
+        MB</code>.
+    </p>
+
+    <h3>Usage</h3>
+    <code class="nostyle">
+        
+    </code>
+    <h4>Parameters</h4>
+    <ul>
+        <li>
+            <code class="nostyle">
+                value – {Number}
+            </code>
+
+            <p>
+                An
+                <code>
+                    Number
+                </code>
+                indicating a byte size
+                .
+            </p>
+        </li>
+        <li>
+            <code class="nostyle">
+                precision – {number}
+            </code>
+
+            <p>
+                A
+                <code>
+                    number
+                </code>
+                defining the decimal precision of the byte representation
+            </p>
+        </li>
+    </ul>
+</section>
+</div>
+</section-->
+<section id="Directives">
+<div class="row-fluid page-header">
+    <h1>Directives</h1>
+</div>
+<div class="row-fluid">
+<section id="teaPanel">
+    <h2>teaPanel
+        <small class="muted">(directive in module
+            <code>
+                tea.directives
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        The <code>teaPanel</code> builds a custom panel using the nested elements as panel content.
+    </p>
+
+    <h3>Usage</h3>
+								<pre class="prettyprint linenums lang-html">
+&lt;tea-panel class=&quot;span7&quot; title=&quot;'Tomcat'&quot; name=&quot;'Web Application'&quot;&gt;
+    &lt;table class=&quot;tea-table&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Url&lt;/th&gt;
+                &lt;th&gt;Status&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr ng-repeat=&quot;webapp in webapps&quot;&gt;
+                &lt;td class=&quot;highlight&quot;&gt;&lt;a ng-click=&quot;goto(webapp)&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;/td&gt;
+                &lt;td class=&quot;status&quot;
+                ng-class=&quot;webapp.status.state == 'RUNNING' |conditional:'tea-status-ok':'tea-status-error'&quot;&gt;
+                
+                &lt;/td&gt;
+            &lt;/tr&gt;
+         &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/tea-panel&gt;</pre>
+    <h4>Directive info</h4>
+    <ul>
+        <li>
+            This directive creates new scope
+        </li>
+    </ul>
+    <h4>Customization</h4>
+    <h5>fixed</h5>
+
+    <p>Adding the attribute fixed to the directive removes the ability to resize and collapse the panel.</p>
+    <h5>titleLink</h5>
+
+    <p>Attribute that adds a link to the title of the panel the link href is the value of the attribute</p>
+    <h4>Nested directives</h4>
+
+    <p>This directive supports the nested directive <code>teaPanelActions</code></p>
+                                <pre class="prettyprint linenums lang-html">
+&lt;tea-panel-actions&gt;
+    &lt;a class=&quot;tea-action-btn&quot; ng-click=&quot;openOperation('registerAgent')&quot;&gt;Register&lt;/a&gt;
+&lt;/tea-panel-actions&gt;</pre>
+</section>
+<section id="teaMasthead">
+    <h2>teaMasthead
+        <small class="muted">(directive in module
+            <code>
+                tea.directives
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        The <code>teaMasthead</code> builds a masthead for the page. The masthead is used to define entities.
+    </p>
+
+    <h3>Usage</h3>
+								<pre class="prettyprint linenums lang-html">
+&lt;tea-masthead title=&quot;'Tomcat Server'&quot;
+              subtitle=&quot;object.name&quot;&gt;
+
+    &lt;tea-masthead-attributes&gt;
+        &lt;tea-attribute ng-repeat=&quot;(name, value) in object.config&quot; label=&quot;&quot;&gt;&lt;/tea-attribute&gt;
+    &lt;/tea-masthead-attributes&gt;
+
+    &lt;tea-masthead-long-attributes&gt;
+        &lt;tea-long-attribute label=&quot;Description&quot;&gt;&lt;/tea-long-attribute&gt;
+    &lt;/tea-masthead-long-attributes&gt;
+
+    &lt;tea-masthead-actions&gt;
+        &lt;a ng-repeat=&quot;operation in object.type.operations | filter:isPublic&quot; class=&quot;tea-action-btn&quot;
+           ng-click=&quot;openOperation(operation.name)&quot;&gt;&lt;/a&gt;
+    &lt;/tea-masthead-actions&gt;
+&lt;/tea-masthead&gt;</pre>
+    <h4>Parameters</h4>
+    <ul>
+        <li>
+            <code class="nostyle">
+                title – {string}
+            </code>
+            Title of the page
+        </li>
+        <li>
+            <code class="nostyle">
+                subtitle – {string}
+            </code>
+            Subtitle of the page
+            <p>
+        
+    
+    <h4>Customization</h4>
+    <h5>teaMastheadAttributes</h5>
+
+    <p>
+        Attributes that will be rendered in the first column of the masthead. This should be used with <code>teaAttribute</code>
+        directive only.
+    </p>
+    <h5>teaMastheadLongAttributes</h5>
+
+    <p>
+        Long attributes that will be rendered in the second column of the masthead. This should be used with <code>teaLongAttribute</code>
+        directive only.
+    </p>
+    <h5>teaMastheadActions</h5>
+
+    <p>
+        Action buttons that will be rendered in the masthead. This should be used with HTML anchors using the class
+        <code>tea-action-btn</code> only.
+        Operations on the current
+        <code>
+            TeaObject
+        </code>
+        can be performed using the
+        <code>
+            openOperation
+        </code> function provided by
+        <code>
+            teaScopeDecorator
+        </code>.
+    </p>
+    <h5>teaMastheadConstraints</h5>
+
+    <p>
+        Constrains that will be rendered in the masthead. This should be used with <code>teaConstraint</code> directive
+        only.
+    </p>
+    <h5>teaMastheadStatus</h5>
+
+    <p>
+        Status that will be rendered just below title and name.
+    </p>
+                                <pre class="prettyprint linenums lang-html">&lt;tea-masthead-status&gt;
+    &lt;span ng-show=&quot;object.status&quot; ng-class=&quot;getStatusClass(object)&quot;&gt;
+        
+    &lt;/span&gt;
+&lt;/tea-masthead-status&gt;</pre>
+    <h4>Directive info</h4>
+    <ul>
+        <li>
+            This directive creates new scope
+        </li>
+    </ul>
+
+<section id="teaAttribute">
+    <h2>teaAttribute
+        <small class="muted">(directive in module
+            <code>
+                tea.directives
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        The <code>teaAttribute</code> formats a attribute with a label and content.
+    </p>
+
+    <h3>Usage</h3>
+								<pre class="prettyprint linenums lang-html">
+&lt;tea-attribute label=&quot;Version&quot;&gt;&lt;/tea-attribute&gt;</pre>
+    <h4>Parameters</h4>
+    <ul>
+        <li>
+            <code class="nostyle">
+                label – {string}
+            </code>
+            Label of the attribute.
+        </li>
+    </ul>
+    <h4>Directive info</h4>
+    <ul>
+        <li>
+            This directive creates new scope
+        </li>
+    </ul>
+</section>
+<section id="teaLongAttribute">
+    <h2>teaLongAttribute
+        <small class="muted">(directive in module
+            <code>
+                tea.directives
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        The <code>teaLongAttribute</code> formats a attribute with a label and content. This includes support for long
+        text.
+    </p>
+
+    <h3>Usage</h3>
+								<pre class="prettyprint linenums lang-html">
+&lt;tea-long-attribute label=&quot;Description&quot;&gt;&lt;/tea-long-attribute&gt;</pre>
+    <h4>Parameters</h4>
+    <ul>
+        <li>
+            <code class="nostyle">
+                label – {string}
+            </code>
+            Label of the attribute.
+        </li>
+    </ul>
+    <h4>Directive info</h4>
+    <ul>
+        <li>
+            This directive creates new scope
+        </li>
+    </ul>
+</section>
+<section id="teaConstraint">
+    <h2>teaConstraint
+        <small class="muted">(directive in module
+            <code>
+                tea.directives
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        The <code>teaConstraint</code> formats constraint with label.
+    </p>
+
+    <h3>Usage</h3>
+								<pre class="prettyprint linenums lang-html">
+&lt;tea-constraint label=&quot;Contraint1&quot;&gt;&lt;/tea-constraint&gt;</pre>
+    <h4>Parameters</h4>
+    <ul>
+        <li>
+            <code class="nostyle">
+                label – {string}
+            </code>
+            Label of the constraing.
+        </li>
+    </ul>
+    <h4>Directive info</h4>
+    <ul>
+        <li>
+            This directive creates new scope
+        </li>
+    </ul>
+</section>
+
+
+<section id="Types">
+<div class="row-fluid page-header">
+    <h1>Types</h1>
+</div>
+<div class="row-fluid">
+<section id="teaobject">
+    <h2>TeaObject
+        <small class="muted">(type in module
+            <code>
+                tea
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        An object managed by TEA
+    </p>
+
+    <h3>Usage</h3>
+    Instances of this class should be retrieved using <a href="#teaObjectService">teaObjectService</a>.
+    <h3>Properties</h3>
+
+    <div class="row-fluid">
+        <ul class="properties span9">
+            <li>
+                <h4>path</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        Path to access this object.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>name</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        Name of this object.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>desc</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        Detailled description of this object.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>status</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {Object} –
+                        </code>
+                        An object representing the status of this object. The status object always has a
+                        <code>
+                            state
+                        </code>
+                        property defined.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>config</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {Object} –
+                        </code>
+                        An object representing the configuration of this object.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>type</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {TeaObjectType} –
+                        </code>
+                        The type of this object.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>agentId</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        ID of the agent that manages this object.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>key</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        Key of the object.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>objectId</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        Identifier of the object
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="teaobjecttype">
+    <h2>TeaObjectType
+        <small class="muted">(type in module
+            <code>
+                tea
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        A type of a
+        <code>
+            TeaObject
+        </code>
+    </p>
+
+    <h3>Properties</h3>
+
+    <div class="row-fluid">
+        <ul class="properties span9">
+            <li>
+                <h4>type</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        Fully qualified type name i.e.
+                        <code>
+                            &lt;agent identifier&gt;:&lt;agent version&gt;:type name
+                        </code>
+                        .
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>name</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        The name of this type.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>concept</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        The kind of concept this type represent.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>desc</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        A detailled description of this type.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>operations</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {Array.&lt;TeaOperation&gt;} –
+                        </code>
+                        An array of operations.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>references</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {Array.&lt;TeaReference&gt;} –
+                        </code>
+                        An array of references.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <h3>Methods</h3>
+
+    <div class="row-fluid">
+        <ul class="properties span9">
+            <li>
+                <h4>getOperation</h4>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>
+                        <code>
+                            name {string} –
+                        </code>
+                        Name of the operation
+                    </li>
+                </ul>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {TeaOperation} –
+                        </code>
+                        Operation with the given name
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>getReference</h4>
+                <h5>Parameters</h5>
+                <ul>
+                    <li>
+                        <code>
+                            name {string} –
+                        </code>
+                        Name of the reference
+                    </li>
+                </ul>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {TeaReference} –
+                        </code>
+                        Reference with the given name
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="teaoperation">
+    <h2>TeaOperation
+        <small class="muted">(type in module
+            <code>
+                tea
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        An operation applicable to a
+        <code>
+            TeaObject
+        </code>
+    </p>
+
+    <h3>Properties</h3>
+
+    <div class="row-fluid">
+        <ul class="properties span9">
+            <li>
+                <h4>name</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        The name of this operation.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>desc</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        A detailled description of this operation.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>params</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {Array.&lt;TeaParam&gt;} –
+                        </code>
+                        An array of operation parameters.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>type</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {String} –
+                        </code>
+                        The operation type i.e. one of <code>READ</code>, <code>UPDATE</code>, <code>DELETE</code>.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>returnType</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {String} –
+                        </code>
+                        The type of the return value i.e. one of 'string', 'number', 'boolean', 'object', 'reference'.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="teaparam">
+    <h2>TeaParam
+        <small class="muted">(type in module
+            <code>
+                tea
+            </code>)
+        </small>
+    </h2>
+    <h3>Description</h3>
+
+    <p>
+        A parameter defined on a
+        <code>
+            TeaOperation
+        </code>
+    </p>
+
+    <h3>Properties</h3>
+
+    <div class="row-fluid">
+        <ul class="properties span9">
+            <li>
+                <h4>name</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        The name of this parameter.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>desc</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        A detailled description of this parameter.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>type</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {string} –
+                        </code>
+                        Type of this parameter, supported values are
+                        <code>
+                            'string', 'number', 'boolean', 'object' and 'agentId'
+                        </code>
+                        .
+                        <code>
+                            'agentId'
+                        </code>
+                        to select which agent should be invoked when the target object is managed by multiple agents.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>optional</h4>
+                <h5>Returns</h5>
+                <ul>
+                    <li>
+                        <code>
+                            {boolean} –
+                        </code>
+                        True, if this parameter is required for the operation, false otherwise.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <section id="teareference">
+        <h2>TeaReference
+            <small class="muted">(type in module
+                <code>
+                    tea
+                </code>)
+            </small>
+        </h2>
+        <h3>Description</h3>
+
+        <p>
+            An reference defined by a
+            <code>
+                TeaObjectType
+            </code>
+        </p>
+
+        <h3>Properties</h3>
+
+        <div class="row-fluid">
+            <ul class="properties span9">
+                <li>
+                    <h4>name</h4>
+                    <h5>Returns</h5>
+                    <ul>
+                        <li>
+                            <code>
+                                {string} –
+                            </code>
+                            The name of this reference.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>type</h4>
+                    <h5>Returns</h5>
+                    <ul>
+                        <li>
+                            <code>
+                                {string} –
+                            </code>
+                            The type ID of the elements of this reference.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>multiplicity</h4>
+                    <h5>Returns</h5>
+                    <ul>
+                        <li>
+                            <code>
+                                {boolean} –
+                            </code>
+                            true, if the reference is defined to have multiple target, false otherwise
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+</section>
+</div>
+</section>
+<section id="fileformats">
+    <div class="row-fluid page-header">
+        <h1>File Formats</h1>
+    </div>
+    <div class="row-fluid">
+        <section id="customization">
+            <h2>UI Customization File</h2>
+
+            <h3>Description</h3>
+
+            <p>
+                UI can be customized through a customization file. If provided as part of custom static resources this
+                file must be named <code>customization.json</code> and placed in the static resource top level folder.
+            </p>
+
+            <p>
+                The file format is JSON. The customization file must contain a single object. That object members are
+                individual customization rules with the member name being the selector and the member value the
+                customization value.
+            </p>
+
+            <p>
+                Selectors follow the syntax <code>&lt;Object Type Name&gt;[#&lt;Operation Name&gt;[#&lt;Method Type&gt;[.&lt;Parameter
+                Name&gt;]]]</code>.
+            </p>
+
+            <h3>Usage</h3>
+                                <pre class="prettyprint lang-json">
+{
+    "CustomUI" : {
+        "app" : {
+            "name": "custom",
+            "modules": {
+                "dependency" : "scripts/dependency.module.js",
+                "test" : "scripts/test.module.js"
+            },
+            "libraries" : ["scripts/test.library.js"],
+            "stylesheets" : ["css/test.css", "css/test1.css"]
+        },
+        "views" : {
+            "default": {
+                "template": "mypage.html",
+                "app": "custom"
+            }
+        }
+    },
+    "CustomApp" : {
+        "views" : {
+            "default": {
+                "template": "mygrouppage.html",
+                "app": "custom"
+            }
+        }
+    }
+}</pre>
+            <h3>Properties</h3>
+
+            <div class="row-fluid">
+                <ul class="properties span9">
+                    <li>
+                        <h4>app</h4>
+
+                        <p>
+                            Configures an AngularJS application
+                        </p>
+                        <h5>Selector</h5>
+
+                        <p>
+                            The <code>app</code> customization property is only supported on top level object.
+                        </p>
+                        <h5>Value</h5>
+                        <ul>
+                            <li>
+                                <h6>name</h6>
+
+                                <p>Defines the name of the application, will default to name of top level object.</p>
+                            </li>
+                            <li>
+                                <h6>libraries</h6>
+
+                                <p>An array of paths of javascript files. Paths are relative to the static resource
+                                    folder.</p>
+
+                                <p>Libraries are loaded before modules and in order of the array.</p>
+                            </li>
+                            <li>
+                                <h6>modules</h6>
+
+                                <p>A map of module names to path to the module javascript file. Paths are relative to
+                                    the static resource folder.</p>
+
+                                <p>Modules are loaded after libraries.</p>
+                            </li>
+                            <li>
+                                <h6>stylesheets</h6>
+
+                                <p>An array of paths of css files. Paths are relative to the static resource folder.</p>
+
+                                <p>Stylesheets are loaded before the app is initialized and in order of the array.</p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>views</h4>
+                        <h5>Selector</h5>
+
+                        <p>
+                            Applies to all object types.
+                        </p>
+                        <h5>Value</h5>
+
+                        <p>Map of view name to view definition as an object. A view definition contains the following
+                            properties:</p>
+                        <ul>
+                            <li>
+                                <h6>template</h6>
+
+                                <p>
+                                    Path to the HTML partial to load in the page. Paths are relative to the static
+                                    resource folder.
+                                </p>
+                                <h6>app</h6>
+
+                                <p>
+                                    Name of the app defined by this agent.
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>label</h4>
+                        <h5>Selector</h5>
+
+                        <p>
+                            Applies to all object types.
+                        </p>
+                        <h5>Value</h5>
+
+                        <p>Name of the object to display in UI.</p>
+
+                        <p>Label of the top level object is used as product name.</p>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+    </div>
+</section>
+
+
+
+<div class="footer-main">
+    <span class="footer-name">TIBCO Enterprise Administrator Documentation Copyright &copy; 2014 TIBCO Software Inc. All rights reserved. Proprietary and confidential. | v2.1.0</span><img class="footer-logo" src="images/TIBCO_logo_whiteOnGray.png" />
+</div>
+
+<script>
+    (function ($) {
+        var $window = $(window);
+
+        window.prettyPrint && prettyPrint();
+
+        $('body').scrollspy({
+            target: '.bs-docs-sidebar',
+            offset: 60
+        });
+
+        $('.bs-docs-sidenav').affix({
+            offset: {
+                top: 200
+            }
+        });
+    })(jQuery);
+</script>
+
+
+</p></li></ul></section></div></section></div></div></section></div></div></div>
+</div>
+
+
+        </div>
+    </div>
+
+    <div class="footer-main">
+    <span class="footer-name">TIBCO Enterprise Administrator Documentation Copyright &copy; 2014 TIBCO Software Inc. All rights reserved. Proprietary and confidential. | v2.1.0</span><img
+        class="footer-logo" src="/assets/themes/tea/images/TIBCO_logo_whiteOnGray.png"/>
+</div>
+
+</body>
+</html>
+

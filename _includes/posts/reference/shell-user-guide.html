@@ -1,0 +1,761 @@
+<div class="reference container-fluid" style="padding-bottom: 30px;">
+			<div class="row-fluid">
+				<div class="span3 bs-docs-sidebar">
+					<ul class="nav nav-list bs-docs-sidenav">
+                        <li class="nav-header">
+                            Connect to Remote Shell
+                        </li>
+                        <li>
+                            <a href="#connect"> <i class="icon-chevron-right"></i> Connect to Remote Shell</a>
+                        </li>
+						<li class="nav-header">
+							Commands
+						</li>
+						<li>
+							<a href="#navigation"> <i class="icon-chevron-right"></i> Navigation </a>
+						</li>
+						<li>
+							<a href="#help"> <i class="icon-chevron-right"></i> Help </a>
+						</li>
+                        <li>
+                            <a href="#language-constructs"> <i class="icon-chevron-right"></i> Shell Language </a>
+                        </li>
+                        <li>
+                            <a href="#advanced-commands"> <i class="icon-chevron-right"></i> Advanced Commands </a>
+                        </li>
+                        <li>
+                            <a href="#scriptsupport"> <i class="icon-chevron-right"></i>Direct Command & Script File Support </a>
+                        </li>
+                        <li>
+                            <a href="#sftpsupport"> <i class="icon-chevron-right"></i> SFTP & SCP Support </a>
+                        </li>
+                        <li>
+                            <a href="#pnsupport"> <i class="icon-chevron-right"></i> Position & Named argument support </a>
+                        </li>
+                        <li>
+                            <a href="#completion"> <i class="icon-chevron-right"></i> Command Completion </a>
+                        </li>
+                        <li>
+                            <a href="#interactivearguments"> <i class="icon-chevron-right"></i> Interactive Arguments Support </a>
+                        </li>
+                        <li>
+                            <a href="#bindingsessionvariables-to-operationarguments"> <i class="icon-chevron-right"></i> Support for Binding Session Variables to Arguments</a>
+                        </li>
+						<li></li>
+						<li class="nav-header">
+                            Working with Sample Agent
+						</li>
+						<li>
+							<a href="#sample-agent-register"> <i class="icon-chevron-right"></i> Register </a>
+						</li>
+						<li>
+							<a href="#sample-agent-manage"> <i class="icon-chevron-right"></i> Manage </a>
+						</li>
+					</ul>
+				</div>
+				<div class="span9">
+					<section id="connect">
+						<div class="row-fluid page-header">
+							<h1>Connect to Remote Shell</h1>
+						</div>
+						<div class="row-fluid">
+                            <p>
+                                TIBCO Enterprise Administrator shell is a remote shell based on SSH. Follow these steps to connect to the remote TEA SSH server.
+                            </p>
+
+                            <p>
+                                <ol>
+                                    <li>Use your favourite terminal program (Putty or Terminal).</li>
+                                    <li>Connect to the remote TEA SSH server using the command <code>ssh -p 2222 admin@localhost</code> :</li>
+                                    <li>Enter the password <em>admin</em></li>
+                                </ol>
+                            </p>
+                            <p>
+                                Upon successful connection, you will see this banner</code>.
+                            </p>
+
+<pre>
+ _____ _____    _      ____  _          _ _
+|_   _| ____|  / \    / ___|| |__   ___| | |
+  | | |  _|   / _ \   \___ \| '_ \ / _ \ | |
+  | | | |___ / ___ \   ___) | | | |  __/ | |
+  |_| |_____/_/   \_\ |____/|_| |_|\___|_|_|
+
+TEA shell v2.1.0
+
+Hit '&lt;tab&gt;' for a list of available commands
+    and '[cmd] --help' for help on a specific command.
+    or 'help [cmd]' to get detailed help on the command with samples.
+    Run 'logout' or 'exit' to exit the shell.
+</pre>
+                        </div>
+					</section>
+					<section id="commands">
+						<div class="row-fluid page-header">
+							<h1>Commands</h1>
+						</div>
+                        <div class="row-fluid">
+                        <section id="navigation">
+                            <h2>Navigation</h2>
+                            <div class="row-fluid">
+                                <p>Navigating through the object hierarchy on the TEA Server is quite similar to navigating a file system. Each object has a path corresponding to it and using the '<em>cd</em>' command one can navigate to the object.</p>
+                                <p>Following are commands which are helpful for navigation:</p>
+                                <div id="navigation-commands">
+                                    <ul class="methods span9">
+                                        <li>
+                                            <h4>ls</h4>
+                                            <p>
+                                                Lists the members contained in a TEA object at the specified path.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <h4>cd</h4>
+                                            <p>
+                                                Navigate to the TEA object at the specified path.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <h4>pwd</h4>
+                                            <p>
+                                                Print the path of the current TEA object.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="help">
+                            <div class="row-fluid page-header">
+                                <h2>Help</h2>
+                            </div>
+                            <div class="row-fluid">
+                                <p>To get comprehensive help using a command, use the <em>--help</em> option with the command.</p>
+                                <p>Help prints out the following details of the command:</p>
+                                <ul>
+                                    <li>
+                                        Description
+                                    </li>
+                                    <li>
+                                        Name and description of Arguments
+                                    </li>
+                                    <li>
+                                        Name, description and aliases for Options
+                                    </li>
+                                    <li>
+                                        Syntax for usage
+                                    </li>
+                                </ul>
+                                <p>To get more details about the command including description and examples, use <em>help 'command name'</em>.</p>
+                                <p>Displays detailed description of the command. For example:</p>
+                                <ul>
+                                    <li>
+                                        Detailed description of the command
+                                    </li>
+                                    <li>
+                                        Examples of the command
+                                    </li>
+                                </ul>
+    <p>Following is the output for the command '<code>cd --help</code>'</p>
+    <pre>
+NAME
+        tea:cd
+
+    Changes the context to the given path
+
+SYNTAX
+        tea:cd [path]
+
+ARGUMENTS
+        path
+                Target path to which to change the context to.
+    </pre>
+    <p>Following is the output for the command '<code>help cd</code>'</p>
+    <pre>
+NAME
+        tea:cd
+
+	Changes the context to the given path
+
+SYNTAX
+        tea:cd [path]
+
+ARGUMENTS
+        path
+                Target path to which to change the context to.
+
+
+DESCRIPTION
+        Change Directory - change the current working directory to a specific Folder.
+        If directory is not given, the current working directory is not changed.
+
+SAMPLES
+        1. Do cd command in TEA server without argument:
+
+        admin@localhost.local:/>cd
+        admin@localhost.local:/>
+        admin@localhost.local:/>pwd
+        /
+
+        2. Do cd command in TEA server with optional argument [path] to change to another path:
+
+        admin@localhost.local:/>cd TEA
+        admin@localhost.local:/TEA>
+        admin@localhost.local:/TEA>pwd
+        /TEA
+
+        3. Do cd command in TEA server to move up one path:
+
+        admin@localhost.local:/TEA>cd ..
+        admin@localhost.local:/>
+        admin@localhost.local:/>pwd
+        /
+
+    </pre>
+                            </div>
+                        </section>
+                        <section id="language-constructs">
+                            <div class="row-fluid page-header">
+                                <h2>Shell Language</h2>
+                            </div>
+                            <div class="row-fluid">
+                                <p>The command language supports some advanced constructs which help in scripting. Using these constructs one can combine multiple commands and write complex scripts.</p>
+                                <p>Following is a list of supported constructs:</p>
+                                <div id="language-constructs-list">
+                                    <ul class="methods span9">
+                                        <li>
+                                            <h4>Arrays</h4>
+                                            <p>
+                                                Arrays can be passed as arguments to some commands
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                <ul>
+                                                    <li>echo [ 'a' 'b' 'c']</li>
+                                                </ul>
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <h4>Multiple Commands</h4>
+                                            <p>
+                                                Multiple commands can be run by separating them with a '<em>;</em>'
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                <ul>
+                                                    <li>cd /TEA; ls</li>
+                                                </ul>
+                                            </code>
+                                        </li>
+                                        <!--li>
+                                            <h4>Command Grouping</h4>
+                                            <p>
+                                                Multiple commands can be grouped using parenthesis '<em>(</em>' and '<em>)</em>' to specify the order of execution
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                <ul>
+                                                    <li>(echo a | capture) | capture</li>
+                                                </ul>
+                                            </code>
+                                        </li-->
+                                        <li>
+                                            <h4>Pipes</h4>
+                                            <p>
+                                                Output of one command can be piped to the input of another command using a '<em>|</em>'
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                <ul>
+                                                    <li>ls TEA/members/Roles | grep a</li>
+                                                    TEA_ADMIN<br>
+                                                    Tomcat Admin<br>
+                                                    Tomcat User<br>
+                                                </ul>
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <h4>Closures</h4>
+                                            <p>
+                                                Closures are functions which can be invoked with arguments. One can define the functions at runtime and invoked them at runtime. '<em>{</em>' and '<em>}</em>' are used to enclose a closure definition.
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                <ul>
+                                                    <li>admin@localhost:/TEA> each {ls}{show info $it}</li>
+                                                    Name:TEA<br>
+                                                    Type:tea:2.1.0:TEA<br>
+                                                    Status:Running<br><br>
+                                                    Name:Agents<br>
+                                                    Type:tea:2.1.0:agents<br><br>
+                                                    Name:Users<br>
+                                                    Type:tea:2.1.0:users<br><br>
+                                                    Name:Groups<br>
+                                                    Type:tea:2.1.0:groups<br><br>
+                                                    Name:Roles<br>
+                                                    Type:tea:2.1.0:roles<br><br>
+                                                    Name:Realms<br>
+                                                    Type:tea:2.1.0:realms<br><br>
+                                                    Name:Machines<br>
+                                                    Type:tea:2.1.0:teaMachines<br><br>
+                                                    Name:Solutions<br>
+                                                    Type:tea:2.1.0:solutions
+                                                </ul>
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <h4>Json ComplexType</h4>
+                                            <p>
+                                                If the definition of a particular TeaParam of a TeaOperation is an user defined object then on shell side user should input a string in Json complexType format.
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                <ul>
+                                                    <li>'{"strA":"aa","strB":"bb"}'</li>
+                                                </ul>
+                                            </code>
+                                            <br>
+                                            <p>                                                                                        
+                                            <b>Note:</b> Use single quotation marks to wrap the JSON input in the single command mode. In the interactive mode, do not use quotation marks. 
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="advanced-commands">
+                            <div class="row-fluid page-header">
+                                <h2>Advanced Commands</h2>
+                            </div>
+                            <div class="row-fluid">
+                                <p>The command language supports some advanced constructs which help in scripting. Using these constructs one can combine multiple commands and write complex scripts.</p>
+                                <p>Following is a list of supported constructs:</p>
+                                <div id="advanced-commands-list">
+                                    <ul class="methods span9">
+                                        <li>
+                                            <h4>each</h4>
+                                            <p>
+                                                Invokes a given function (i.e. closure) on each of the elements in the given array.
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                each values function
+                                            </code>
+                                            <ul>
+                                                <li>The 'values' parameter can be an array or a closure which evaluates to an array</li>
+                                                <li>The 'function' parameter is a closure which should be invoked on each element</li>
+                                            </ul>
+                                            <h5>Example</h5>
+                                            <code>
+                                                <ul>
+                                                    <li>each [Jan Feb Mar] { echo $it}</li>
+                                                    <li>each { ls } {show info $it}</li>
+                                                </ul>
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <h4>if</h4>
+                                            <p>
+                                                Command to support conditional execution
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                if condition ifTrue [ifFalse]
+                                            </code>
+                                            <h5>Example</h5>
+                                            <code>
+                                                <ul>
+                                                    <li>if { echo true } { echo 'true' } { echo 'false' }</li>
+                                                </ul>
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <h4>sort</h4>
+                                            <p>
+                                                Sort the input objects
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                tea:sort [options]
+                                            </code>
+                                            <h5>Options</h5>
+                                            <code>
+                                                --ignore-leading-blanks, -b <br>
+										                ignore leading blanks <br>
+										        --numeric-sort, -n <br>
+										                compare according to string numerical value <br>
+										        --unique, -u <br>
+										                output only the first of an equal run <br>
+										        --reverse, -r <br>
+										                reverse the result of comparisons<br>
+										        --ignore-case, -f <br>
+										                fold lower case to upper case characters <br>
+                                            </code>
+                                            <h5>Example</h5>
+                                            <code>
+                                                1. Do sort command in TEA server shell terminal with ls command plus pipe: <br>
+
+											        admin@localhost.local:/TEA/members>ls | sort -r <br>
+											        Users <br>
+											        Solutions <br>
+											        SearchViewManager <br>
+											        Roles <br>
+											        Realms<br>
+											        Permissions<br>
+											        OperatorViewManager<br>
+											        Machines<br>
+											        Groups<br>
+											        Agents<br>											        
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <h4>set</h4>
+                                            <p>
+                                                Sets a particular option in current session
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                tea:set [options]
+                                            </code>
+                                            <h5>Options</h5>
+                                            <code>
+                                                --scope <br>
+										                Global scope name to set for current session<br>
+										              </code>
+                                            <h5>Example</h5>
+                                            <code>
+                                                1. Set "tomcat" as the current global session scope, while being under / path:<br><br>
+                                                
+                                                	admin@localhost.local:/>set --scope tomcat<br>
+	                                                Successfully set the current scope to tomcat<br><br>
+	                                                
+                                                2. Set "NULL" as the current global session scope means reset the scope back to empty:<br><br>
+                                                
+                                                	admin@localhost.local:/>set --scope NULL<br>
+                                                	Successfully reset the current scope back to empty.<br>
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <h4>get</h4>
+                                            <p>
+                                                Gets the current value of a supported option, from current session
+                                            </p>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                tea:get [options]
+                                            </code>
+                                            <h5>Options</h5>
+                                            <code>
+                                                --scope <br>
+										                Requests the current value of global scope stored in session<br>
+										              </code>
+                                            <h5>Example</h5>
+                                            <code>
+                                                1. Get the current global session scope, while being under /TEA path: <br>
+												        admin@localhost.local:/TEA>get --scope <br>
+        												Current scope is: tomcat <br>
+                                            </code>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="scriptsupport">
+                            <h2>Direct command &amp; script file support</h2>
+                            <div class="row-fluid">
+                                <p>Tea shell supports executing direct command and script file from input</p>
+                                <p>Following are description for these two usages:</p>
+                                <div id="navigation-commands">
+                                    <ul class="methods span9">
+                                        <li>
+                                        	<h4>direct command</h4>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                ssh -p2222 admin@localhost ls
+                                            </code>
+											<h5>Output</h5>
+                                            <code>
+                                                TEA
+                                            </code>
+                                        </li>
+ 										<li>
+                                        	<h4>script file</h4>
+                                        	<h5>Content of script.txt</h5>
+                                        	ls
+                                        	pwd
+                                        	history
+                                            <h5>Usage</h5>
+                                            <code>
+                                                ssh -p2222 admin@localhost scriptmode < script.txt
+                                            </code>
+											<h5>Output</h5>
+                                            <code>
+												ls<br>
+												TEA<br>
+												<br>
+												pwd<br>
+												/<br>
+												history<br>
+												    0  ls<br>
+												    1  pwd<br>
+												    2  history<br>
+                                            </code>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="sftpsupport">
+                            <h2>SFTP &amp; SCP support</h2>
+                            <div class="row-fluid">
+                                <p>Tea server supports SFTP &amp; SCP protocol.</p>
+                                <p>Following are description for the usage:</p>
+                                <p>When the SFTP connected you can type in help after sftp prompt to get detailed usage.</p>
+                                <div id="navigation-commands">
+                                    <ul class="methods span9">
+                                        <li>
+                                            <h4>sftp command</h4>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                sftp -P 2222 admin@localhost
+                                            </code>
+                                            <h5>Output</h5>
+                                            <code>
+                                                sftp>
+                                            </code>
+                                            <h5>Upload and download file</h5>
+                                            <code>
+                                                sftp> put /Users/myname/a.txt           <br>
+                                                Uploading /Users/myname/a.txt to /a.txt <br>
+                                                /Users/myname/a.txt      100%  934     0.9KB/s   00:00           <br>
+                                                sftp> ls                                <br>
+                                                a.txt                                   <br>
+                                                sftp> get a.txt                         <br>
+                                                Fetching /a.txt to a.txt                <br>
+                                                /a.txt                                  <br>
+                                            </code>
+                                        </li>
+                                        <li>
+                                            <h4>scp command</h4>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                scp -P 2222 a.xml admin@localhost:/a.xml
+                                            </code>
+                                            <h5>Output</h5>
+                                            <code>
+                                                a.xml               100%   11KB  11.3KB/s   00:00
+                                            </code>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="pnsupport">
+                            <h2>Position &amp; Named argument support</h2>
+                            <div class="row-fluid">
+                                <p>Tea shell support positional and named argument for TeaParam.</p>
+                                <p>Following is the usage for how to define the TeaParam and how to use it in shell.</p>
+                                <div id="navigation-commands">
+                                    <ul class="methods span9">
+                                        <li>
+                                            <h4>Position only</h4>
+                                            <h5>TeaParam definition</h5>
+                                            <code>
+                                                public String testA(@TeaParam(name = "aa", description = "Greetings parameter", alias = "") final long[] greetings)
+                                            </code>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                shell> testA [12 15]
+                                            </code>
+                                         </li>
+                                         <li>
+                                            <h4>Position &amp; Named with no alias defined</h4>
+                                            <h5>TeaParam definition</h5>
+                                            <code>
+                                                public String testA(@TeaParam(name = "aa", description = "Greetings parameter") final long[] greetings)
+                                            </code>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                shell> testA [12 15]      <br>
+                                                shell> testA -aa [12 15]  <br>
+                                                shell> testA --aa [12 15] <br>
+                                            </code>
+                                         </li>
+                                         <li>
+                                            <h4>Position &amp; Named with alias defined</h4>
+                                            <h5>TeaParam definition</h5>
+                                            <code>
+                                                public String testA(@TeaParam(name = "aa", description = "Greetings parameter", alias="bb") final long[] greetings)
+                                            </code>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                shell> testA [12 15]        <br>
+                                                shell> testA -aa [12 15]    <br>
+                                                shell> testA --aa [12 15]   <br>
+                                                shell> testA -bb [12 15]    <br>
+                                                shell> testA --bb [12 15]   <br>
+                                            </code>
+                                         </li>
+                                         <li>
+                                            <h4>Named Only</h4>
+                                            <h5>TeaParam definition</h5>
+                                            <code>
+                                                public String testA(@TeaParam(name = "aa", description = "Greetings parameter", alias="aa") final long[] greetings)
+                                            </code>
+                                            <h5>Usage</h5>
+                                            <code>
+                                                shell> testA -aa [12 15]    <br>
+                                                shell> testA --aa [12 15]   <br>
+                                            </code>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="completion">
+                            <div class="row-fluid page-header">
+                                <h2>Command Completion</h2>
+                            </div>
+                            <div class="row-fluid">
+                                <p>Completion for commands is available. Completion can be triggered by entering <code>&lt;tab&gt;</code></p>
+                                <p>Following completions are supported:</p>
+                                <ul>
+                                    <li>
+                                        Command Names
+                                    </li>
+                                    <li>
+                                        Argument completion for path-based commands like <em>ls</em>, <em>cd</em>, <em>show status</em> and <em>show info</em>,
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section id="interactivearguments">
+                            <div class="row-fluid page-header">
+                                <h2>Support for interactive arguments</h2>
+                            </div>
+                            <div class="row-fluid">
+                                <p>The user can execute a command by entering each argument when being prompted to.</p>
+                                <p>Example:
+                                 For a command <code>create</code> which takes <code>arg1</code> and <code>arg2</code> as parameters <br>
+                                 One can enter the parameters in an interactive mode on the console, like this:
+											<p><code>
+											create</code></p>
+											<p><code>
+											arg1:</code>foo</p>
+											<p><code>
+											arg2:</code>bar</p>
+											<p><code>
+											foo bar</code></p>
+											</p>
+                            </div>
+                        </section>
+                         <section id="bindingsessionvariables-to-operationarguments">
+                            <div class="row-fluid page-header">
+                                <h2>Support for Binding Session Variables to Arguments</h2>
+                            </div>
+                            <div class="row-fluid">
+                                <p>For an operation defined on agent this way:<code>create(@TeaParam(name="type") String type,
+                                @TeaParam(name="name") String name, @TeaParam(name="domain", alias="d") String domain);</code>,
+                                it is possible to invoke it as shown below:<br>
+											<code>domain = QA-Domain</code><br>
+											<code>create appspace HR-AppSpace</code>
+                            </div>
+                        </section>
+                    </div>
+				</section>
+                <section id="sample-agent">
+                    <div class="row-fluid page-header">
+                        <h1>Working with sample agent</h1>
+                    </div>
+                    <div class="row-fluid">
+                        <p class="lead">This section describes the typical usage of commands when working with the sample agent.</p>
+                    </div>
+                    <div class="row-fluid">
+                        <section id="sample-agent-register">
+                            <h2>Register</h2>
+                            <div class="row-fluid">
+                                <p>Following are the steps to register the sample agent:</p>
+                                <div id="agent-register-steps">
+                                    <ol class="span9">
+                                        <li>
+                                            <p>
+                                                Start the sample '<em>HelloWorld</em>' agent. Lets assume that the agent is running at the url <code>http://localhost:1234/helloworldagent</code>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Navigate to the root of the object hierarchy
+                                            </p>
+                                            <code>cd TEA/agents/</code>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Invoke the command to register the agent
+                                            </p>
+                                            <code>registeragent helloworldagent2 http://localhost:1234/helloworldagent</code>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Verify if the agent was registered. Check the members at the path <code>/TEA/agents</code>
+                                            </p>
+                                            <code>ls /TEA/agents</code>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="row-fluid">
+                        <section id="sample-agent-manage">
+                            <h2>Manage</h2>
+                            <div class="row-fluid">
+                                <p>Following are the steps to manage the sample agent:</p>
+                                <div id="agent-manage-steps">
+                                    <ol class="span9">
+                                        <li>
+                                            <p>
+                                                Check the status of the agent. Whether it is registered or not.
+                                            </p>
+                                            <code>show status /TEA/agents/helloworldagent2</code>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Reload the agent.
+                                            </p>
+                                            <code>cd /TEA/agents/helloworldagent2; reload</code>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Unregister the agent.
+                                            </p>
+                                            <code>cd /TEA/agents/helloworldagent2; unregister</code>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+			</div>
+
+			
+
+			<script>
+				(function($) {
+					var $window = $(window);
+
+					window.prettyPrint && prettyPrint();
+
+					$('body').scrollspy({
+						target : '.bs-docs-sidebar',
+						offset : 60
+					});
+
+					$('.bs-docs-sidenav').affix({
+						offset : {
+							top : 200
+						}
+					});
+				})(jQuery);
+			</script>
+            </div>
+        </div>

@@ -1,0 +1,82 @@
+# Set the encoding
+encoding: utf-8
+pygments: true
+markdown: kramdown
+
+safe: false
+
+# Themes are encouraged to use these universal variables
+# so be sure to set them if your theme uses them.
+# Page title 
+title : TEA Documentation
+author :
+  name : Li ke(Coco)
+  email : keli@tibco-support.com
+
+# All TIBCO Document Template specific configurations are namespaced into this hash
+#
+TDT :
+  version : 2.1.0
+  footer_text: TIBCO Enterprise Administrator Documentation Copyright &copy; 2014 TIBCO Software Inc. All rights reserved. Proprietary and confidential. | v2.1.0
+  site_url: http://etna.na.tibco.com/
+
+  # All links will be namespaced by BASE_PATH if defined.
+  # Links in your website should always be prefixed with {{BASE_PATH}}
+  # however this value will be dynamically changed depending on your deployment situation.
+  #
+  # CNAME (http://yourcustomdomain.com)
+  #   DO NOT SET BASE_PATH
+  #   (urls will be prefixed with "/" and work relatively)
+  #
+  # GitHub Pages (http://username.github.io)
+  #   DO NOT SET BASE_PATH
+  #   (urls will be prefixed with "/" and work relatively)
+  #
+  # GitHub Project Pages (http://username.github.io/project-name)
+  #
+  #   A GitHub Project site exists in the `gh-pages` branch of one of your repositories.
+  #  REQUIRED! Set BASE_PATH to: http://username.github.io/project-name
+  #
+  # CAUTION:
+  #   - When in Localhost, your site will run from root "/" regardless of BASE_PATH
+  #   - Only the following values are falsy: ["", null, false]
+  #   - When setting BASE_PATH it must be a valid url.
+  #     This means always setting the protocol (http|https) or prefixing with "/"
+  BASE_PATH : /TEA-doc
+
+  # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
+  # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
+  #
+  # Override this by defining an absolute path to assets here.
+  # ex:
+  #   http://s3.amazonaws.com/yoursite/themes/watermelon
+  #   /assets
+  #
+  ASSET_PATH : /assets/themes/tea
+
+  # Settings for all other include helpers can be defined by creating
+  # a hash with key named for the given helper. ex:
+  #
+  #   pages_list :
+  #     provider : "custom"
+  #
+  # Setting any helper's provider to 'custom' will bypass the helper code
+  # and include your custom code. Your custom file must be defined at:
+  #   ./_includes/custom/[HELPER]
+  # where [HELPER] is the name of the helper you are overriding.
+  pages_list :
+    activespaces:
+        - title: "Get Started"
+          url: "/getstarted/getting-started.html"             
+        - title: "Developer Guide"
+          url: "/developerguide/developer-guide.html"
+        - title: "Reference"
+          sub:
+            - title: "Javadocs"
+              url: "/reference/javadocs.html"
+            - title: "UI Library"
+              url: "/reference/reference.html"
+            - title: "Shell User Guide"
+              url: "/reference/shell-user-guide.html"
+
+

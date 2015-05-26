@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <title>TEA Documentation</title>
+    
+    <meta name="author" content="Li ke(Coco)">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    
+    <link rel="icon" type="image/x-icon" href="/assets/themes/tea/images/favicon.ico"/>
+
+    <!-- Le styles -->
+    <link href="/assets/themes/tea/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/tea/vendor/prettify/css/prettify.css" rel="stylesheet">
+    <link href="/assets/themes/tea/css/tea.css" rel="stylesheet">
+    <link href="/assets/themes/tea/css/tea-docs.css" rel="stylesheet">
+    <script src="/assets/themes/tea/vendor/jquery/jquery-1.8.3.min.js"></script>
+    <script src="/assets/themes/tea/vendor/prettify/prettify.js"></script>
+    <script src="/assets/themes/tea/vendor/bootstrap/js/bootstrap.js"></script>
+
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a href="/" class="brand">
+        <img class="brand-logo" src="/assets/themes/tea/images/TIBCO_ea_docs_logo_white.png"/>
+      </a>
+      <ul class="nav">
+        
+
+
+      
+    
+
+
+  
+      
+          <li  class="active" >
+              
+              
+
+
+    
+    
+
+
+
+              <a  class="active"  target="" href="/getstarted/getting-started.html" >Get Started</a>
+          </li>
+      
+  
+      
+          <li >
+              
+              
+
+
+    
+    
+
+
+
+              <a  target="" href="/developerguide/developer-guide.html" >Developer Guide</a>
+          </li>
+      
+  
+      
+         
+
+          <li class="dropdown ">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Reference
+                  <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                  
+                      <li>
+                          
+                          
+
+
+    
+    
+
+
+
+                          <a class="" target="" href="/reference/javadocs.html">Javadocs</a>
+                      </li>
+                  
+                      <li>
+                          
+                          
+
+
+    
+    
+
+
+
+                          <a class="" target="" href="/reference/reference.html">UI Library</a>
+                      </li>
+                  
+                      <li>
+                          
+                          
+
+
+    
+    
+
+
+
+                          <a class="" target="" href="/reference/shell-user-guide.html">Shell User Guide</a>
+                      </li>
+                  
+              </ul>
+          </li>
+      
+  
+
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="container-narrow">
+        <div class="content">
+            
+<header class="jumbotron subhead">
+	<div class="container">
+		<h1>Get Started</h1>
+		<p class="lead">This section explains how to get started with TIBCO Enterprise Administrator.</p>
+	</div>
+</header>
+<div><div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3 bs-docs-sidebar">
+                    <ul class="nav nav-list bs-docs-sidenav">
+                        
+                        <li>
+                            <a href="#install-server"> <i class="icon-chevron-right"></i>Install server</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#create-agent"> <i class="icon-chevron-right"></i>HelloWorld Sample agent</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#agent-developer"> <i class="icon-chevron-right"></i>HelloWorld Sample agent for Developers</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#shell"> <i class="icon-chevron-right"></i>TEA Shell</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="span9">
+                    <section id="install-server">
+                        <div class="row-fluid page-header">
+                            <h1>Download and install the server</h1>
+                        </div>
+                        <div class="row-fluid">
+                            <p>
+                                Follow these simple steps to get TEA server up and running:
+                            </p>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span4">
+                                <h2>1. Download</h2>
+                                <p>
+                                    Download the TEA server installer and install it. The only prerequisite is to have java 7 installed on your machine. To run samples, apache ant will be needed.
+                                </p>
+                            </div>
+                            <div class="span4">
+                                <h2>2. Start</h2>
+                                <p>
+                                    Navigate into <em>TIBCO_HOME/tea/2.1/bin</em> folder and launch the <em>tea</em> executable.                                    <pre style="white-space:pre-line;width:80%">
+                            $ cd $TIBCO_HOME/tea/2.1/bin
+                            $ ./tea
+                        </pre>
+                                    When you start TEA server, you are starting a web server on the default port <em>localhost:8777</em>
+                                </p>
+                            </div>
+                            <div class="span4">
+                                <h2>3. Access server</h2>
+                                <p>
+                                    To use TEA server, point your browser to <a target="_blank" href="http://localhost:8777/tea/">http://localhost:8777/tea/</a>
+                                </p>
+                                <p>
+                                    You should see the login dialog. The default username password are "admin" and "admin".
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="create-agent">
+                        <div class="row-fluid page-header">
+                            <h1>Running the HelloWorld Sample</h1>
+                        </div>
+                            <p>
+                            You can begin to explore TIBCO Enterprise Administrator SDK by running the Hello world sample.
+                            </p>
+                            <p><h4>Prerequisites</h4></p>
+
+                            <p>
+                                Ensure that you have installed JRE 1.7 (or later) and Apache Ant 1.7 (or later).<br />
+                                Ensure that you have installed the jar files that implement the TEA agent library. <br />
+                                Ensure that the TEA server is running, and your browser can connect to it.
+                            </p>
+
+                            <h4>Procedure</h4>
+
+                            1. In a command shell, navigate to TIBCO_HOME/tea/tea_version/samples/helloworld.<br />
+                            2. Run ant. The default ant target compiles and runs the sample program.<br />
+                            3. Register the HelloWorld agent with the TIBCO Enterprise Administrator server.<br />
+                                <ul>
+                                    <li>In a web browser, navigate to the server home page.</li>
+                                    <li>In the Settings pane, click the Agents icon.</li>
+                                    <li>Click the Register new button.</li>
+                                    <li>Enter a name for the agent; for example, HelloWorld Agent.</li>
+                                    <li>Enter the URL where the agent accepts requests from the TIBCO Enterprise Administrator server: <code>http://localhost:1234/helloworldagent</code></li>
+                                    <li>Enter a description string for the sample agent; for example, <code>My sample HelloWorld agent</code></li>
+                                    <li>Click the Register button to complete registration.</li>
+                                </ul>
+                            4. Test the HelloWorld agent.<br />
+                                <ul>
+                                    <li>In the TIBCO Enterprise Administrator server GUI, navigate to the home page.</li>
+                                    <li>In the Products pane, click the HelloWorldTopLevelType icon. This action navigates to the HelloWorld product page.</li>
+                                    <li>Click the hw button, which invokes the agent's only operation.</li>
+                                    <li>In the dialog, select Hello World Agent as the operation target.</li>
+                                    <li>Enter a string in the greetings field.</li>
+                                    <li>Click the hw button to complete the operation. The agent outputs a greeting in the alert box.</li>
+                                    <li>Click the Dismiss button to close the alert box.</li>
+                                </ul>
+
+                        </section>
+
+                        <section id="agent-developer">
+                            <div class="row-fluid page-header">
+                                <h1>The HelloWorld Sample: Lessons for Agent Developers</h1>
+                             </div>
+
+                            <p>
+                                The HelloWorld sample is a minimum viable agent program. It illustrates a lower bound on code complexity, API support and operating environment. 
+                                Careful examination of its code can yield valuable information for novice agent developers.
+                            </p>
+                            <p>
+                                The HelloWorld sample is a stand-alone agent process, which runs in a Jetty server.
+                            </p>
+                            <p>
+                                 We have coded the sample's top-level object in the interface style. That is, we define the class HelloWorldAgent to implement
+                                the TopLevelTeaObject interface.
+                            </p>
+                            <p>
+                                We begin by defining the five required methods of that interface—getName, getDescription, getMembers, getTypeName, getTypeDescription. For the purposes of this sample, all five methods do the minimum work—getMembers
+                                returns an empty list, while the others each return a constant string.
+                            </p>
+                            <div class="bs-docs-example">
+                            <pre class="prettyprint linenums lang-java">public class HelloWorldAgent implements TopLevelTeaObject{
+
+    private static final String NAME = "hw";
+    private static final String DESC = "Hello World";
+    
+    @Override
+    public String getDescription() {
+        return DESC;
+    }
+    
+    @Override
+    public String getName() {
+        return NAME;
+    }
+    
+    @Override
+    public Collection&lt;BaseTeaObject&gt; getMembers() {
+        return Collections.EMPTY_LIST;
+    }
+    
+    @Override
+    public String getTypeDescription() {
+        return "Top level type for HelloWorld";
+    }
+    
+    @Override
+    public String getTypeName() {
+        return "HelloWorldTopLevelType";
+    }</pre></div>
+
+                                    <p>
+                                        We also define a method named helloworld, and annotate it as a @TeaOperation. This method implements the one operation that this agent offers to users. If you ignore the annotations, you can see that the method itself is simple; it concatenates two strings (one of which is the method's argument) and returns the resulting string. The @TeaOperation annotation makes this method available in the TIBCO Enterprise Administrator server as an operation of the agent. Java introspection of the annotation gives the server the operation's name and description. The @TeaParameter annotation tells the server to prompt the user for the operation's argument. 
+                                    </p>
+                                    <div class="bs-docs-example">
+                                    <pre class="prettyprint linenums lang-java">@TeaOperation(name = NAME, description = "Send greetings")
+public String helloworld(@TeaParam(name = "greetings", description = "Greetings parameter") final String greetings) throws IOException {
+       return "Hello " + greetings;
+}</pre></div>
+<p>
+The main method initializes the agent process: 
+</p>
+<div class="bs-docs-example">
+<pre class="prettyprint linenums lang-java">public static void main(final String[] args) throws Exception {
+     TeaAgentServer server = new TeaAgentServer("HelloWorldAgent", "1.0", "Hello World Agent", 1234, "/helloworldagent", true);
+     server.registerInstance(new HelloWorldAgent());
+     server.start();
+}</pre></div>
+<p>
+1. It instantiates a TeaAgentServer—an object that wraps a Jetty instance. This instance, server, represents the dedicated Jetty server within which the agent runs.
+(Notice that we must distinguish between two distinct servers—the Jetty web server instance, and the TIBCO Enterprise Administrator server.)
+The fourth and fifth arguments to the constructor—port and contextPath—together specify the URL where agent listens for requests from the TIBCO Enterprise Administrator server.
+</p>
+<p>
+2. It creates a singleton instance of the agent's top-level object, HelloWorldAgent.
+</p>
+<p>
+3. server.registerInstance introspects that instance, gathering metadata from the annotations (@TeaOperation and @TeaParameter, above).
+</p>
+<p>
+4. The TIBCO Enterprise Administrator server later requests this metadata from the Jetty server, and uses it to implement its user interface for the agent.
+server.start starts the Jetty server and deploys the agent code within it. 
+</p>
+                    </section>
+
+                    <section id="shell">
+                        <div class="row-fluid page-header">
+                            <h1>Use TEA Shell</h1>
+                        </div>
+                        <div class="row-fluid">
+                            <p>
+                                This is a remote shell based on SSH. Follow these steps to connect to the remote SSH server.
+                            </p>
+
+                            <p>
+                            <ol>
+                                <li>Use your favourite terminal program (Putty or Terminal).</li>
+                                <li>Connect to the remote TEA SSH server using the command <code>ssh -p 2222 admin@localhost</code> .</li>
+                                <li>Enter the password <em>admin</em></li>
+                            </ol>
+                            </p>
+                            <p>
+                                Upon successful connection, you will see the banner and the prompt <code>admin@localhost:/&gt;</code>.
+                            </p>
+                            <p>
+                                Use <em>cd</em>, <em>ls</em>, <em>pwd</em> commands to navigate the server object hierarchy. Enter 'tab' to see a list of commands and also for command-completion.
+                            </p>
+                            <p>
+                                Refer to the <a href="./shell-user-guide.html">Shell User Guide</a> for further details on using the TEA Shell.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div style="height:50px"></div>
+            </div>
+            <script>
+            (function($) {
+                var $window = $(window);
+
+                window.prettyPrint && prettyPrint();
+
+                $('body').scrollspy({
+                    target : '.bs-docs-sidebar'
+                });
+
+                $('.bs-docs-sidenav').affix({
+                    offset : {
+                        top : 200
+                    }
+                });
+            })(jQuery);
+        </script>
+        </div>
+
+</div>
+
+
+        </div>
+    </div>
+
+    <div class="footer-main">
+    <span class="footer-name">TIBCO Enterprise Administrator Documentation Copyright &copy; 2014 TIBCO Software Inc. All rights reserved. Proprietary and confidential. | v2.1.0</span><img
+        class="footer-logo" src="/assets/themes/tea/images/TIBCO_logo_whiteOnGray.png"/>
+</div>
+
+</body>
+</html>
+

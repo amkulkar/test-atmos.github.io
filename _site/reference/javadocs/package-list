@@ -1,0 +1,11 @@
+com.tibco.tea.agent
+com.tibco.tea.agent.annotations
+com.tibco.tea.agent.api
+com.tibco.tea.agent.events
+com.tibco.tea.agent.metrics
+com.tibco.tea.agent.persistence
+com.tibco.tea.agent.server
+com.tibco.tea.agent.server.listener
+com.tibco.tea.agent.sharing
+com.tibco.tea.agent.support
+com.tibco.tea.agent.types
