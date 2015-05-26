@@ -7,7 +7,7 @@ safe: true
 
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
-# Page title 
+# Page title
 title : TEA Documentation
 author :
   name : Li ke(Coco)
@@ -42,7 +42,7 @@ TDT :
   #   - Only the following values are falsy: ["", null, false]
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
-  BASE_PATH : /TEA-doc
+  BASE_PATH : /test-atmos.github.io
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
@@ -67,7 +67,7 @@ TDT :
   pages_list :
     activespaces:
         - title: "Get Started"
-          url: "/getstarted/getting-started.html"             
+          url: "/getstarted/getting-started.html"
         - title: "Developer Guide"
           url: "/developerguide/developer-guide.html"
         - title: "Reference"
@@ -78,5 +78,3 @@ TDT :
               url: "/reference/reference.html"
             - title: "Shell User Guide"
               url: "/reference/shell-user-guide.html"
-
-
