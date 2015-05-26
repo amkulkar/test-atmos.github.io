@@ -18,8 +18,7 @@ author :
 TDT :
   version : 1.0.0
   footer_text: TIBCO Enterprise Administrator Documentation Copyright &copy; 2014 TIBCO Software Inc. All rights reserved. Proprietary and confidential. | v2.1.0
-  #site_url: http://etna.na.tibco.com/
-   site_url: http://amkulkar.github.io/
+  site_url: http://etna.na.tibco.com/
 
   # All links will be namespaced by BASE_PATH if defined.
   # Links in your website should always be prefixed with {{BASE_PATH}}
